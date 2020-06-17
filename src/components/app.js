@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import Workflow from './workflow';
-import Rules from './rules';
-import Discussion from './discussion';
+
+import Navigation from "./navigation";
+import PageContent from "./page-content"
 
 export default class App extends Component {
   render() {
     return (
       <div className='app'>
         <h1>DevCamp React Starter</h1>
-        <Discussion />
-        <Rules />
-        <Workflow />
+       <Navigation />
+       <PageContent />
       </div>
     );
   }

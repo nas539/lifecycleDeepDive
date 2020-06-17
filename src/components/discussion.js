@@ -1,10 +1,39 @@
 import React, { Component } from 'react';
 
 export default class Discussion extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            pageTitle: "Discussion",
+            currentTime: String(new Date())
+        };
+    }
+
+    componentDidMount() {
+    
+       this.lifetime = setInterval(() => {
+            console.log("New chat");
+            this.setState({ currentTime: String(new Date())})
+        }, 1000);
+    }
+    
+    componentWillUnmount() {
+        clearInterval(this.lifetime);
+    }
+
+    componentDidUpdate() {
+
+    }
     render() {
+        const { pageTitle , currentTime } = this.state;
+
         return (
             <div>
-                Discussion..
+               <h1>{pageTitle}</h1>
+               <div>
+                   {currentTime}
+               </div>
             </div>
         );
     }
